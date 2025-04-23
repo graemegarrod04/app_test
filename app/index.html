@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Sample Widget</title>
+		<link rel="stylesheet" type="text/css" href="css/sample.css">
+		<link href="css/jquery.json-viewer.css" rel="stylesheet" />
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="https://js.zohostatic.com/creator/widgets/version/1.0/widgetsdk-min.js"></script>
+		<script type="text/javascript" src="js/jquery.json-viewer.js"></script>
+		<script type="text/javascript" src="js/sample.js"></script>
+	</head>
+	<body>
+		<div id="mainContainer" class="zc-main-container">
+			<div id="headerContainer" class="zc-header-container zc-clear">
+				<a class="zc-logo" href="#"></a>				
+				<span name="zcAppName" id="zcAppName" class="zc-app-name">Test Your Widget</span>
+				<div id="headerRightContainer" class="zc-header-right-container"> <!-- zc-header-message-container-visible -->
+					<div id="zcHeaderMessageContainer" class="zc-header-message-container zc-tooltip zc-hide">
+						<span class="zc-header-init-message zc-tooltip-text">Select One To Proceed</span>
+					</div>
+					<div id="zcHeaderListContainer" class="zc-header-list-container">
+						<div id="zcRightMenu" class="zc-menu-icon">
+							<div class="zc-menu-icon-bar1"></div>
+							<div class="zc-menu-icon-bar2"></div>
+							<div class="zc-menu-icon-bar3"></div>
+						</div>
+						<ul id="headerList" class="zc-header-list">
+							<li name="addRecord" class="zc-header-item">Add Record</li>
+							<li name="editRecord" class="zc-header-item">Update Record</li>
+							<li name="viewRecords" class="zc-header-item">Get All Records</li>
+							<li name="viewRecord" class="zc-header-item">Get Specific Record</li>
+							<li name="deleteRecord" class="zc-header-item">Delete Record</li>
+							<li name="uploadFile" class="zc-header-item">Upload File</li>
+							<li name="downloadImage" class="zc-header-item">Download Image</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="bodyContainer" class="zc-body-container">
+				<div id="defaultContainer" class="zc-default-container">
+					<div class="zc-default-inner-container">
+						<span>This is a sample widget to try and test the record operations through JS SDK.</span>
+						<p class="zc-sub-text">
+							<span>Click on any of the operations above to continue.</span>
+						</p>
+					</div>
+					
+				</div>
+				<div id="zcBodyWrapper" class="zc-body-wrapper zc-hide">
+					<div id="addRecordDiv" class="zc-body-element-container zc-hide">
+						<div class="zc-body-outer-container zc-add-record-container">
+							<div class="zc-body-inner-container">
+								<span class="zc-inner-title">Add Record  </span>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Form Link Name  </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="formLinkName" placeholder="Contacts"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Form Data  </span>
+									<textarea class="zc-input-text" type="textarea" autocomplete="off" name="addRecBody" placeholder="{&quot;data&quot;:{&quot;Name&quot;:&quot;John&quot;,&quot;Email&quot;:&quot;john@zylker.com&quot;}}"/></textarea>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<button id="addRecord" class="zc-button">
+									<span>Add Record</span>
+									<i>&#x2192;</i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="editRecordDiv" class="zc-body-element-container zc-hide">
+						<div class="zc-body-outer-container zc-edit-record-container">
+							<div class="zc-body-inner-container">
+								<span class="zc-inner-title">Update Record </span>	
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Report Link Name </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="reportLinkName" placeholder="All_Contacts"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Record ID</span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="recordId" placeholder="66359000000015039"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Form Data</span>
+									<textarea class="zc-input-text" type="textarea" autocomplete="off" name="editRecBody" placeholder="{&quot;data&quot;:{&quot;Email&quot;:&quot;john.d@zylker.com&quot;}}"/></textarea>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<button id="editRecord" class="zc-button">
+									<span>Update Record</span>
+									<i>&#x2192;</i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="deleteRecordDiv" class="zc-body-element-container zc-hide">
+						<div class="zc-body-outer-container zc-delete-record-container">
+							<div class="zc-body-inner-container">
+								<span class="zc-inner-title">Delete Record</span>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Report Link Name </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="reportLinkName" placeholder="All_Contacts"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Criteria </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="deleteCriteria" placeholder="ID == 66359000000015039"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<button id="deleteRecord" class="zc-button">
+									<span>Delete Record</span>
+									<i>&#x2192;</i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="viewRecordsDiv" class="zc-body-element-container zc-hide">
+						<div class="zc-body-outer-container zc-view-record-container">
+							<div class="zc-body-inner-container">
+								<span class="zc-inner-title">Get All Records  </span>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Report Link Name </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="reportLinkName" placeholder="All_Contacts"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Criteria (optional)</span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="getCriteria" placeholder="Status != &quot;Closed&quot;"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Page Number (optional)</span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="pageNumber" placeholder="1"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Page Size (optional)</span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="pageSize" placeholder="200"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<button id="viewRecords" class="zc-button">
+									<span>Get Records</span>
+									<i>&#x2192;</i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="viewRecordDiv" class="zc-body-element-container zc-hide">
+						<div class="zc-body-outer-container zc-view-record-container">
+							<div class="zc-body-inner-container">
+								<span class="zc-inner-title">Get Specific Record</span>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Report Link Name </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="reportLinkName" placeholder="All_Contacts"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Record ID </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="recordId" placeholder="66359000000015039"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<button id="viewRecord" class="zc-button">
+									<span>Get Record</span>
+									<i>&#x2192;</i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="uploadFileDiv" class="zc-body-element-container zc-hide">
+						<div class="zc-body-outer-container zc-delete-record-container">
+							<div class="zc-body-inner-container">
+								<span class="zc-inner-title">Upload File</span>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Report Link Name </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="reportLinkName" placeholder="All_Contacts"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Record ID </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="recordId" placeholder="66359000000015039"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Field Name </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="fieldName" placeholder="Attachment"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Upload the file </span>
+									<input class="zc-input-text" type="file" autocomplete="off" name="file" placeholder="Attachment"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Parent ID (Optional) </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="parentId" placeholder="66359000000013592"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<button id="uploadFile" class="zc-button">
+									<span>Upload File</span>
+									<i>&#x2192;</i>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="downloadImageDiv" class="zc-body-element-container zc-hide">
+						<div class="zc-body-outer-container zc-delete-record-container">
+							<div class="zc-body-inner-container">
+								<span class="zc-inner-title">Download Image</span>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Image URL </span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="imageURL" placeholder="/api/v2/zylker/Contacts/view/All_Contacts/66359000000015039/Upload/download"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<div class="zc-input-group zc-clear">
+									<span class="zc-input-label">Image Tag ID</span>
+									<input class="zc-input-text" type="text" autocomplete="off" name="imageTagID"  value="image" placeholder="image"/>
+									<span class="zc-hide zc-btn-hide-validate">&#x2718;</span>
+								</div>
+								<button id="downloadImage" class="zc-button">
+									<span>Download Image</span>
+									<i>&#x2192;</i>
+								</button>
+								<div class="zc-image-group zc-clear">
+									<img class="zc-image" id="image" src="#" alt="Image Tag"/>
+								</div>	
+							</div>
+						</div>
+					</div>
+					<div id="responseDiv" class="zc-reponse-container zc-hide">
+						<div class="">
+							<div class="zc-body-inner-container">
+								<span class="zc-inner-title">Reponse</span>
+								<pre id="responseCode" class="zc-reponse-code language-javascript"></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footerContainer" class="zc-footer-container">
+				<div class="zc-footer-component zc-clear">
+					<span class="zc-powered-by zc-left"></span>
+					<span class="zc-copyrights zc-right"></span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
